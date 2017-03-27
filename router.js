@@ -46,6 +46,13 @@ var server = http.createServer(function(request, response){
         var string = fs.readFileSync('./style.css')
         response.setHeader('Content-Type', 'text/css')
         response.end(string)
+    }else if(path === '/limian'){
+        var datascript = query.callback+'('+27+')'
+    		  if (query.name === 'limian'){
+        	 if (query.param === 'age'){
+            	response.end(datascript) 
+        	 }
+    		  }
     }else{  // 如果上面都不是用户请求的路径，头部设置text/html格式将路径的文件读取为字符串返回给用户
         var string = fs.readFileSync('.'+path)  // 就读取 index.html 的内容
         response.setHeader('Content-Type', 'text/html;charset=utf-8')  // 设置响应头 Content-Type
