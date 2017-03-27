@@ -68,3 +68,13 @@
         }
     }
 </script>
+<script>
+    var script = document.createElement('script')
+    script.src ='http://localhost:8080/limian?name=limian&param=age&callback=getparam'
+    document.body.appendChild(script)
+    var limian_age
+    function getparam(age) {
+        limian_age = age     //limian_age得到了服务器传送的数据
+    }
+    console.log(limian_age)
+</script>
