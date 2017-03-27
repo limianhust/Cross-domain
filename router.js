@@ -1,4 +1,4 @@
-Skip to content
+/**Skip to content
 This repository
 Search
 Pull requests
@@ -16,6 +16,7 @@ Branch: master Find file Copy pathmock-server/router.js
 1 contributor
 RawBlameHistory     
 54 lines (45 sloc)  1.97 KB
+*/
 /**
  * Created by limian on 2017/3/22.
  */
