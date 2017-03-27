@@ -1,3 +1,26 @@
+<head>
+    <meta charset="UTF-8">
+    <title>加载更多</title>
+    <style>
+        div.flex{
+            display: flex;
+            justify-content: center;
+        }
+        div.flex button{
+            font-size: large;
+            font-weight: 800;
+            color: #555;
+        }
+        ul li{
+            border: 1px solid #cccccc;
+            list-style: none;
+            padding: 10px;
+        }
+        ul li:hover{
+            background: darkgray;
+        }
+    </style>
+</head>
 <ul id="load">
 
 </ul>
@@ -77,4 +100,28 @@
         limian_age = age     //limian_age得到了服务器传送的数据
     }
     console.log(limian_age)
+</script>
+<div class="ct">
+    <div class="main">
+        <input type="text" placeholder="">
+    </div>
+    <iframe src="http://b.limian.com:8080/b.html" frameborder="0"></iframe>
+</div>
+<script>
+    /* 降域实现跨域
+    document.querySelector('.main input').addEventListener('input', function(){
+        console.log(this.value);
+        window.frames[0].document.querySelector('input').value = this.value;
+    })
+    document.domain = "limian.com"
+    */
+    //postMessage实现跨域
+     document.querySelector('.main input').addEventListener('input', function(){
+     console.log(this.value)
+     window.frames[0].postMessage(this.value,'*')
+     })
+    window.addEventListener('message',function (e) {
+        console.log(e.data)
+        document.querySelector('.main input').value = e.data
+    })
 </script>

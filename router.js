@@ -77,5 +77,4 @@ function getContent(start,num) {
 
 server.listen(port)
 console.log('监听 '+ port+ ' 成功')
-Contact GitHub API Training Shop Blog About
-© 2017 GitHub, Inc. Terms Privacy Security Status Help
+

@@ -1,0 +1,26 @@
+<html>
+<style>
+    html,body{
+        margin: 0;
+    }
+    input{
+        margin: 20px;
+        width: 200px;
+    }
+</style>
+
+<input id="input" type="text"  placeholder="http://b.limian.com:8080/b.html">
+<script>
+
+    document.querySelector('#input').addEventListener('input', function(){
+        console.log(this.value)
+        window.parent.postMessage(this.value,"*")
+    })
+    window.addEventListener('message',function (e) {
+        window.document.querySelector('#input').value = e.data
+        console.log(e.data)
+    })
+    //降域实现跨域
+    // document.domain = 'limian.com'
+</script>
+</html>
