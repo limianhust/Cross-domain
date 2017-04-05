@@ -32,8 +32,7 @@ var server = http.createServer(function(request, response){
     var path = temp.pathname
     var query = temp.query    //取得get参数，form表单格式
 
-    //从这里开始看，上面不要看
-
+    //响应前端请求
     if(path === '/loadMore'){
         console.log(query)
         response.setHeader('Access-Control-Allow-Origin', '*')  // 设置响应头 Access-Control-Allow-Origin,跨域，任何来源都可以请求得到数据
